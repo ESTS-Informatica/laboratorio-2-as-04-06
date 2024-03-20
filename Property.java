@@ -9,9 +9,9 @@
 public class Property {
 
     private static int NUMBER_OF_PROPERTIES = 0;
-    private final String id;
-    private String description;
-    private double price;
+    public final String id;
+    public String description;
+    public double price;
 
     /**
      * Constructor of class Property
@@ -66,6 +66,6 @@ public class Property {
 
     @Override
     public String toString() {
-        return "ID=" + id + ", Description=" + getDescription() + ", Price=" + getPrice();
+        return "Descricao    : " + description + "\n" + ", Preco  : " + price + " Euros";
     }
 }
