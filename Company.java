@@ -12,7 +12,7 @@ import java.util.List;
 public class Company {
 
     // Clients registry
-    private ArrayList<User> clients;
+    public ArrayList<User> clients;
     // Sellers registry
     private ArrayList<User> sellers;
     // Properties registry
@@ -73,7 +73,7 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerClient(User client) {
-        if(!clients.contains(client))
+        if(!clients.contains(client) && client != null)
         {
             clients.add(client);
             return true;     
@@ -88,7 +88,7 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerSeller(User seller) {
-        if(!sellers.contains(seller))
+        if(!sellers.contains(seller) && seller != null)
         {
             sellers.add(seller);
             return true;     
@@ -103,7 +103,12 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerProperty(Property property) {
-        return true;         // dummy implementation
+        if(!properties.contains(property) && property != null)
+        {
+            properties.add(property);
+            return true;     
+        }
+        return false;         // dummy implementation
     }
 
     /**
@@ -113,7 +118,12 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerSell(Sell sell) {
-        return true;         // dummy implementation
+        if(!sells.contains(sell) && sell != null)
+        {
+            sells.add(sell);
+            return true;     
+        }
+        return false;            // dummy implementation
     }
 
     /**
